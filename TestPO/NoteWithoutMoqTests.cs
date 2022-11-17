@@ -6,7 +6,7 @@ using Repositories;
 
 using RepositoriesImplementations;
 
-namespace TestPPO
+namespace TestPO
 {
 	[TestClass]
 	public class NoteWithoutMoqTests
@@ -24,7 +24,7 @@ namespace TestPPO
 
 			Note check2 = new(id, "changed body", false);
 			notesService.Edit(check2);
-			Assert.IsNotNull(check2, "NoteChange");
+			Assert.IsNotNull(check2, "NoteEdit");
 
 			notesService.Delete(id);
 			Assert.AreEqual(0, notesService.GetAllNotesList().Count, "AlarmClockDelete");

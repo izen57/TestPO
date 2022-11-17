@@ -8,8 +8,9 @@ using RepositoriesImplementations;
 
 using System.Drawing;
 
-namespace TestPPO
+namespace TestPO
 {
+	[TestClass]
 	public class AlarmClockWithoutMoqTests
 	{
 		[TestMethod]
@@ -26,7 +27,7 @@ namespace TestPPO
 
 			AlarmClock check2 = new(dateTime, "check2", Color.FromName("yellow"), false);
 			alarmClockService.Edit(check2, dateTime);
-			Assert.IsNotNull(alarmClockService.GetAlarmClock(dateTime), "AlarmClockCreate");
+			Assert.IsNotNull(alarmClockService.GetAlarmClock(dateTime), "AlarmClockEdit");
 
 			alarmClockService.Delete(dateTime);
 			Assert.AreEqual(0, alarmClockService.GetAllAlarmClocks().Count, "AlarmClockDelete");
