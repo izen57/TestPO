@@ -22,7 +22,7 @@ namespace TestPO.NoteIntegrationTests
 
 			notesService.Delete(id);
 
-			Assert.IsNull(notesService.GetNote(id), "AlarmClockDelete");
+			Assert.IsNull(notesService.GetNote(id), "NoteDelete");
 		}
 	}
 }

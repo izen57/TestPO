@@ -21,7 +21,7 @@ namespace TestPO.NoteIntegrationTests
 			Note check2 = new(id, "changed body", false);
 			notesService.Edit(check2);
 
-			Assert.IsNotNull(check2, "NoteChange");
+			Assert.IsNotNull(check2, "NoteEdit");
 		}
 	}
 }

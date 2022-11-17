@@ -24,7 +24,7 @@ namespace TestPPO
 
 			Note check2 = new(id, "changed body", false);
 			notesService.Edit(check2);
-			Assert.IsNotNull(check2, "NoteChange");
+			Assert.IsNotNull(check2, "NoteEdit");
 
 			notesService.Delete(id);
 			Assert.IsNull(notesService.GetNote(id), "AlarmClockDelete");
