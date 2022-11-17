@@ -1,7 +1,10 @@
-﻿using RepositoriesImplementations;
-using Repositories;
-using Logic;
+﻿using Logic;
+
 using Model;
+
+using Repositories;
+
+using RepositoriesImplementations;
 
 using System.Drawing;
 

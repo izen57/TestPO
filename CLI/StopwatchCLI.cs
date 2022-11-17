@@ -1,7 +1,9 @@
 ﻿using Logic;
+
 using Model;
 
 using System.Drawing;
+
 using User_Interface;
 
 using SysStopwatch = System.Diagnostics;

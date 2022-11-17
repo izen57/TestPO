@@ -1,6 +1,8 @@
-﻿using RepositoriesImplementations;
-using Logic;
+﻿using Logic;
+
 using Model;
+
+using RepositoriesImplementations;
 
 using User_Interface;
 

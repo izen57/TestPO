@@ -1,7 +1,10 @@
-﻿using Repositories;
-using RepositoriesImplementations;
-using Logic;
+﻿using Logic;
+
 using Model;
+
+using Repositories;
+
+using RepositoriesImplementations;
 
 namespace TestPPO
 {
