@@ -1,3 +1,7 @@
-msbuild TestPO\TestPO.csproj
-vstest.console.exe /logger:trx TestPO\bin\debug\net6.0-windows10.0.22621.0\TestPO.dll
+msbuild IntegrationTests\IntegrationTests.csproj
+msbuild UnitTests\UnitTests.csproj
+
+vstest.console.exe /logger:trx IntegrationTests\bin\debug\net6.0-windows10.0.22621.0\IntegrationTests.dll
+vstest.console.exe /logger:trx UnitTests\bin\debug\net6.0-windows10.0.22621.0\UnitTests.dll
+
 rmdir /s /q %LOCALAPPDATA%\IsolatedStorage

@@ -6,10 +6,10 @@ using Repositories;
 
 using RepositoriesImplementations;
 
-namespace TestPO.NoteIntegrationTests
+namespace IntegrationTests.NoteIntegrationTests
 {
 	[TestClass]
-	public class NoteIntegrationTestCreate
+	public class NoteIntegrationTestEdit
 	{
 		[TestMethod]
 		public void Test()
@@ -18,10 +18,10 @@ namespace TestPO.NoteIntegrationTests
 			INoteService notesService = new NoteService(notesRepo);
 			var id = Guid.NewGuid();
 
-			Note check1 = new(id, "test1", false);
-			notesService.Create(check1);
+			Note check2 = new(id, "changed body", false);
+			notesService.Edit(check2);
 
-			Assert.IsNotNull(check1, "NoteCreate");
+			Assert.IsNotNull(check2, "NoteEdit");
 		}
 	}
 }

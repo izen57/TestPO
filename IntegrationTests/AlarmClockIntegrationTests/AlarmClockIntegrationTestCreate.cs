@@ -8,7 +8,7 @@ using RepositoriesImplementations;
 
 using System.Drawing;
 
-namespace TestPO.AlarmClockIntegrationTests
+namespace IntegrationTests.AlarmClockIntegrationTests
 {
 	[TestClass]
 	public class AlarmClockIntegrationTestCreate

@@ -8,10 +8,10 @@ using RepositoriesImplementations;
 
 using System.Drawing;
 
-namespace TestPO.AlarmClockIntegrationTests
+namespace IntegrationTests.AlarmClockIntegrationTests
 {
 	[TestClass]
-	public class AlarmClockIntegrationTestDelete
+	public class AlarmClockIntegrationTestEdit
 	{
 		[TestMethod]
 		public void Test()
@@ -19,12 +19,11 @@ namespace TestPO.AlarmClockIntegrationTests
 			IAlarmClockRepo alarmClockRepo = new AlarmClockFileRepo();
 			IAlarmClockService alarmClockService = new AlarmClockService(alarmClockRepo);
 			DateTime dateTime = new(2022, 9, 14, 19, 15, 0);
-			AlarmClock? check1 = new(dateTime, "check1", Color.FromName("black"), true);
-			alarmClockService.Create(check1);
 
-			alarmClockService.Delete(dateTime);
+			AlarmClock check2 = new(dateTime, "check2", Color.FromName("yellow"), false);
+			alarmClockService.Edit(check2, dateTime);
 
-			Assert.AreEqual(0, alarmClockService.GetAllAlarmClocks().Count, "AlarmClockDelete");
+			Assert.IsNotNull(alarmClockService.GetAlarmClock(dateTime), "AlarmClockEdit");
 		}
 	}
 }
