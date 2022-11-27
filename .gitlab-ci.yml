@@ -3,7 +3,7 @@ test:
   tags:
     - testing-docker
   script:
-    - testing
+    - build.bat
   artifacts:
     paths: [report.txt.enc]
     when: always
