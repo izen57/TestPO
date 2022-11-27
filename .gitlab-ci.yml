@@ -1,7 +1,7 @@
 image: mcr.microsoft.com/dotnet/sdk:latest
 test:
   tags:
-    - testing-docker
+    - windows
   script:
     - .\build.bat
   artifacts:
