@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{44F996F8-908E-46C4-8A62-C5BA3E4B6A00}"
 	ProjectSection(SolutionItems) = preProject
 		build.bat = build.bat
+		gitlab-ci.yml = gitlab-ci.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{C190469C-3754-4495-85ED-3A53C2E78223}"
