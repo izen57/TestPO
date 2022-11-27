@@ -3,7 +3,7 @@ test:
   tags:
     - testing-docker
   script:
-    - sudo ./build.sh
+    - chmod u+x build.sh
   artifacts:
     paths: [report.txt.enc]
     when: always
