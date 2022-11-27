@@ -1,9 +1,10 @@
-image: testing
+image: mcr.microsoft.com/dotnet/sdk:latest
 test:
   tags:
-    - testing-docker
+    - windows
   script:
-    - chmod u+x build.sh
+    - ./build.bat
   artifacts:
     paths: [report.txt.enc]
     when: always
+    
