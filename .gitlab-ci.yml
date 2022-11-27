@@ -1,9 +1,9 @@
-image: mcr.microsoft.com/dotnet/sdk:latest
+image: testing
 test:
   tags:
-    - windows
+    - testing-docker
   script:
-    - .\build.bat
+    - ./build.bat
   artifacts:
     paths: [report.txt.enc]
     when: always
