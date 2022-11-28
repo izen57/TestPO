@@ -4,7 +4,7 @@ test:
     - windows
   script:
     - ./build.bat
-  artifacts:
-    paths: [report.txt.enc]
-    when: always
+  #artifacts:
+  #  paths: [report.txt.enc]
+  #  when: always
     
