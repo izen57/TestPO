@@ -2,8 +2,6 @@ using Logic;
 
 using Model;
 
-using Repositories;
-
 using RepositoriesImplementations;
 
 using System.Drawing;
@@ -24,6 +22,9 @@ namespace E2ETests
 		public void E2EAlarmClockTestInit()
 		{
 			_alarmClockService = new AlarmClockService(new AlarmClockFileRepo());
+			foreach (var alarmClock in _alarmClockService.GetAllAlarmClocks())
+				_alarmClockService.Delete(alarmClock.AlarmTime);
+
 			_checkForTime.Elapsed += AlarmClockSignal;
 		}
 
@@ -35,7 +36,7 @@ namespace E2ETests
 		[TestMethod]
 		public void Test()
 		{
-			if (_alarmClockService.GetAllAlarmClocks().First() != null)
+			if (_alarmClockService.GetAllAlarmClocks().Count != 0)
 			{
 				AlarmClock newAlarmClock = _alarmClockService.GetAllAlarmClocks().First();
 
@@ -53,18 +54,13 @@ namespace E2ETests
 
 			_alarmClockService.Create(alarmClock);
 
-			while (alarmClock.IsWorking)
+			while (DateTime.Now != alarmClock.AlarmTime)
 				;
 
-			if (alarmClock.IsWorking == false)
-			{
-				DateTime oldTime = alarmClock.AlarmTime;
-				alarmClock.AlarmTime = DateTime.Now+new TimeSpan(0, 4, 0);
-				alarmClock.IsWorking = true;
-				_alarmClockService.Edit(alarmClock, oldTime);
-
-				// повтор теста?
-			}
+			DateTime oldTime = alarmClock.AlarmTime;
+			alarmClock.AlarmTime = DateTime.Now+new TimeSpan(0, 4, 0);
+			alarmClock.IsWorking = true;
+			_alarmClockService.Edit(alarmClock, oldTime);
 		}
 
 		public void AlarmClockSignal(object sender, ElapsedEventArgs e)

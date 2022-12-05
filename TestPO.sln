@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{5F81C31B-0840-40E5-B287-4BC30AA6B93F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{913C3292-F4D3-4B1A-A5DC-30A22369CFA0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Data\Repositories.csproj", "{18F0AFFA-0165-4389-8826-2CF2333AA2E2}"
@@ -15,19 +13,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoriesImplementations", "RepositoriesImplementations\RepositoriesImplementations.csproj", "{600B99DA-9A9B-4607-9D0F-D9992C5DC8EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI", "CLI\CLI.csproj", "{13FA6A93-58D4-42D9-B88B-18523A46A89B}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{44F996F8-908E-46C4-8A62-C5BA3E4B6A00}"
 	ProjectSection(SolutionItems) = preProject
 		.gitlab-ci.yml = .gitlab-ci.yml
 		build.bat = build.bat
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{C190469C-3754-4495-85ED-3A53C2E78223}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{3A5D5554-44D6-4C1F-B88C-E3E46B7DD87D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2ETests", "E2ETests\E2ETests.csproj", "{5ACEB4CB-3C13-4CE7-849F-BE4CC8419766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E2ETests", "E2ETests\E2ETests.csproj", "{5ACEB4CB-3C13-4CE7-849F-BE4CC8419766}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CLI", "CLI\CLI.csproj", "{F97F3DF0-C0A0-406D-B544-D60CE3E89D23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{156C4366-2328-4084-AA26-9FAA07259CF3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{6AD5900B-25D6-430C-AAAE-30330D612451}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5F81C31B-0840-40E5-B287-4BC30AA6B93F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F81C31B-0840-40E5-B287-4BC30AA6B93F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F81C31B-0840-40E5-B287-4BC30AA6B93F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F81C31B-0840-40E5-B287-4BC30AA6B93F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{913C3292-F4D3-4B1A-A5DC-30A22369CFA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{913C3292-F4D3-4B1A-A5DC-30A22369CFA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{913C3292-F4D3-4B1A-A5DC-30A22369CFA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,14 +55,6 @@ Global
 		{600B99DA-9A9B-4607-9D0F-D9992C5DC8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{600B99DA-9A9B-4607-9D0F-D9992C5DC8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{600B99DA-9A9B-4607-9D0F-D9992C5DC8EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13FA6A93-58D4-42D9-B88B-18523A46A89B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13FA6A93-58D4-42D9-B88B-18523A46A89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13FA6A93-58D4-42D9-B88B-18523A46A89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13FA6A93-58D4-42D9-B88B-18523A46A89B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C190469C-3754-4495-85ED-3A53C2E78223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C190469C-3754-4495-85ED-3A53C2E78223}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C190469C-3754-4495-85ED-3A53C2E78223}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C190469C-3754-4495-85ED-3A53C2E78223}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A5D5554-44D6-4C1F-B88C-E3E46B7DD87D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A5D5554-44D6-4C1F-B88C-E3E46B7DD87D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A5D5554-44D6-4C1F-B88C-E3E46B7DD87D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +63,18 @@ Global
 		{5ACEB4CB-3C13-4CE7-849F-BE4CC8419766}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ACEB4CB-3C13-4CE7-849F-BE4CC8419766}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ACEB4CB-3C13-4CE7-849F-BE4CC8419766}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F97F3DF0-C0A0-406D-B544-D60CE3E89D23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F97F3DF0-C0A0-406D-B544-D60CE3E89D23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F97F3DF0-C0A0-406D-B544-D60CE3E89D23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F97F3DF0-C0A0-406D-B544-D60CE3E89D23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{156C4366-2328-4084-AA26-9FAA07259CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{156C4366-2328-4084-AA26-9FAA07259CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{156C4366-2328-4084-AA26-9FAA07259CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{156C4366-2328-4084-AA26-9FAA07259CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD5900B-25D6-430C-AAAE-30330D612451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD5900B-25D6-430C-AAAE-30330D612451}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD5900B-25D6-430C-AAAE-30330D612451}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD5900B-25D6-430C-AAAE-30330D612451}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
