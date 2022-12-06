@@ -14,7 +14,7 @@ namespace CLI
 
 		public NoteCLI()
 		{
-			_noteService = new NoteService(new NoteFileRepo());
+			_noteService = new NoteService(new NoteFileRepo(), 1);
 		}
 
 		public void CreateNote()

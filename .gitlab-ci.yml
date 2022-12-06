@@ -3,6 +3,7 @@ image: mcr.microsoft.com/dotnet/sdk:latest
 stages:
   - unit
   - integration
+  - e2e
 
 unit tests:
   tags:
@@ -17,3 +18,10 @@ integration tests:
   script:
     - dotnet test -l trx "E:\TestPO\IntegrationTests\bin\Debug\net6.0-windows10.0.22621.0\IntegrationTests.dll"
   stage: integration
+
+e2e tests:
+  tags:
+   - windows
+  script:
+    - dotnet test -l trx "E:\TestPO\E2ETests\bin\Debug\net6.0-windows10.0.22621.0\E2ETests.dll"
+  stage: e2e

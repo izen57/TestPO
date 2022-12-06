@@ -28,11 +28,13 @@ namespace E2ETests
 			_checkForTime.Elapsed += AlarmClockSignal;
 		}
 
-		//1) завести чтобы зазвонил через минуту после начала теста 
-		//2) проверить что позвонил 
-		//3) выставить на врем€ равное Ђврем€ гарантированного старта приложени€ї
-		//4) ребут
-		//5) проверить что зазвонил после ребута
+		/// <summary>
+		/// 1. ”становка будильника на минуту после начала теста;
+		/// 2. ѕроверка его срабатывани€;
+		/// 3. ”становка будильника на 4 минуты вперЄд;
+		/// 4. ѕовторный запуск теста;
+		/// 5. ѕроверка срабатывани€ будильника.
+		/// </summary>
 		[TestMethod]
 		public void Test()
 		{
@@ -66,7 +68,9 @@ namespace E2ETests
 		public void AlarmClockSignal(object sender, ElapsedEventArgs e)
 		{
 			foreach (var alarmClock in _alarmClockService.GetAllAlarmClocks())
-				if (alarmClock.IsWorking && DateTime.Now >= alarmClock.AlarmTime && DateTime.Now <= alarmClock.AlarmTime+new TimeSpan(0, 0, 30))
+				if (alarmClock.IsWorking &&
+					DateTime.Now >= alarmClock.AlarmTime &&
+					DateTime.Now <= alarmClock.AlarmTime+new TimeSpan(0, 0, 30))
 				{
 					System.Console.WriteLine($"Ѕудильник на врем€ {alarmClock.AlarmTime} сработал.");
 					alarmClock.IsWorking = false;
