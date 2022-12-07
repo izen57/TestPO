@@ -30,7 +30,7 @@ namespace TestPPO
 			Assert.IsNotNull(alarmClockService.GetAlarmClock(dateTime), "AlarmClockEdit");
 
 			alarmClockService.Delete(dateTime);
-			Assert.AreEqual(0, alarmClockService.GetAllAlarmClocks().Count, "AlarmClockDelete");
+			Assert.IsNull(alarmClockService.GetAlarmClock(dateTime), "AlarmClockDelete");
 		}
 	}
 }
