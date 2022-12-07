@@ -29,7 +29,7 @@ namespace TestPPO
 			alarmClockService.Edit(check2, dateTime);
 			Assert.IsNotNull(alarmClockService.GetAlarmClock(dateTime), "AlarmClockEdit");
 
-			alarmClockService.Delete(new(2022, 9, 14, 19, 15, 0));
+			alarmClockService.Delete(dateTime);
 			Assert.AreEqual(0, alarmClockService.GetAllAlarmClocks().Count, "AlarmClockDelete");
 		}
 	}
