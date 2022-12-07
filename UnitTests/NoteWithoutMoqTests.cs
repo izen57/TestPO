@@ -15,7 +15,7 @@ namespace TestPPO
 		public void NoteTest()
 		{
 			INoteRepo notesRepo = new NoteFileRepo();
-			INoteService notesService = new NoteService(notesRepo);
+			INoteService notesService = new NoteService(notesRepo, 1);
 			var id = Guid.NewGuid();
 			
 			Note check1 = new(id, "test1", false);

@@ -15,7 +15,7 @@ namespace IntegrationTests.NoteIntegrationTests
 		public void Test()
 		{
 			INoteRepo notesRepo = new NoteFileRepo();
-			INoteService notesService = new NoteService(notesRepo);
+			INoteService notesService = new NoteService(notesRepo, 1);
 			var id = Guid.NewGuid();
 
 			Note check2 = new(id, "changed body", false);
