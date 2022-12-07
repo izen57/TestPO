@@ -10,7 +10,7 @@ unit tests:
     - windows
   script:
     - dotnet test -l trx "E:\TestPO\UnitTests\bin\Debug\net6.0-windows10.0.22621.0\UnitTests.dll"
-    - rm -r %LOCALAPPDATA%\IsolatedStorage
+    - rm -r C:\Windows\System32\config\systemprofile\AppData\Local\IsolatedStorage
   stage: unit
 
 integration tests:
@@ -18,7 +18,7 @@ integration tests:
     - windows
   script:
     - dotnet test -l trx "E:\TestPO\IntegrationTests\bin\Debug\net6.0-windows10.0.22621.0\IntegrationTests.dll"
-    - rm -r %LOCALAPPDATA%\IsolatedStorage
+    - rm -r C:\Windows\System32\config\systemprofile\AppData\Local\IsolatedStorage
   stage: integration
 
 e2e tests:
@@ -26,5 +26,5 @@ e2e tests:
    - windows
   script:
     - dotnet test -l trx "E:\TestPO\E2ETests\bin\Debug\net6.0-windows10.0.22621.0\E2ETests.dll"
-    - rm -r %LOCALAPPDATA%\IsolatedStorage
+    - rm -r C:\Windows\System32\config\systemprofile\AppData\Local\IsolatedStorage
   stage: e2e
