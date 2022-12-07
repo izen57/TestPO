@@ -56,7 +56,7 @@ namespace E2ETests
 
 			_alarmClockService.Create(alarmClock);
 
-			while (DateTime.Now != alarmClock.AlarmTime)
+			while (DateTime.Now < alarmClock.AlarmTime)
 				;
 
 			DateTime oldTime = alarmClock.AlarmTime;
