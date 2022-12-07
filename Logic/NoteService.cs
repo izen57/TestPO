@@ -21,7 +21,7 @@ namespace Logic
 
 			_repository = repo ?? throw new ArgumentNullException(nameof(repo));
 			
-			_checkForTime = new(60 * 1000);
+			_checkForTime = new(6 * 1000);
 			_checkForTime.Elapsed += (sender, e) => AutoDelete(sender, e, NoteDeleteTime);
 			_checkForTime.Enabled = true;
 		}
