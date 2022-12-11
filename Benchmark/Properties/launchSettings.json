@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Benchmark": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      //"commandLineArgs": "--cli 'C:\Program Files\dotnet'"
+      "commandLineArgs": "--filter '*TheEasiestBenchmark*' --cli 'C:\\Program Files\\dotnet'"
+    }
+  }
+}
