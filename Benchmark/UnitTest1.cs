@@ -5,6 +5,17 @@ using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
 using BenchmarkDotNet.Toolchains.CsProj;
 using BenchmarkDotNet.Toolchains.DotNetCli;
+using BenchmarkDotNet.Toolchains.InProcess.Emit;
+
+using Logic;
+
+using Model;
+
+using Repositories;
+
+using RepositoriesImplementations;
+
+using System.Drawing;
 
 namespace Benchmark
 {
@@ -12,25 +23,61 @@ namespace Benchmark
 	{
 		public MyConfig()
 		{
-			AddJob(Job.Default.WithToolchain(CsProjCoreToolchain.From(NetCoreAppSettings
-					.NetCoreApp21
-					.WithCustomDotNetCliPath(@"C:\dotnet\dotnet.exe", "OutOfProcessToolchain"))));
+			//AddJob(Job.Default.WithToolchain(
+			//	InProcessEmitToolchain.From(NetCoreAppSettings
+			//		.NetCoreApp21
+			//		.WithCustomDotNetCliPath(@"C:\dotnet\dotnet.exe", "OutOfProcessToolchain"))));
+
+			AddJob(Job.ShortRun.WithToolchain(InProcessEmitToolchain.Instance));
+
 		}
 	}
 
 	[RankColumn]
 	public class TheEasiestBenchmark
 	{
-		[Benchmark(Description = "Summ100")]
-		public int Test100()
+		[Benchmark(Description = "Get an alarm clock through the service")]
+		public AlarmClock? AlarmClockFindByService()
 		{
-			return Enumerable.Range(1, 100).Sum();
+			IAlarmClockRepo alarmClockRepo = new AlarmClockFileRepo();
+			IAlarmClockService alarmClockService = new AlarmClockService(alarmClockRepo);
+
+			for (int i = 0; i < 5000; ++i)
+			{
+				AlarmClock alarmClock = new(
+					new DateTime(i),
+					$"Alarm clock {i}",
+					Color.FromArgb(i),
+					true
+				);
+
+				alarmClockService.Create(alarmClock);
+			}
+
+			return alarmClockService.GetAlarmClock(new DateTime(4000));
 		}
 
-		[Benchmark(Description = "Summ200")]
-		public int Test200()
+		[Benchmark(Description = "Get an alarm clock through the 'find' method")]
+		public AlarmClock? AlarmClockFindByList()
 		{
-			return Enumerable.Range(1, 200).Sum();
+			IAlarmClockRepo alarmClockRepo = new AlarmClockFileRepo();
+			IAlarmClockService alarmClockService = new AlarmClockService(alarmClockRepo);
+
+			for (int i = 0; i < 5000; ++i)
+			{
+				AlarmClock alarmClock = new(
+					new DateTime(i),
+					$"Alarm clock {i}",
+					Color.FromArgb(i),
+					true
+				);
+
+				alarmClockService.Create(alarmClock);
+			}
+
+			return alarmClockService
+				.GetAllAlarmClocks()
+				.Find(x => x.AlarmTime == new DateTime(4000));
 		}
 	}
 

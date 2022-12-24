@@ -18,6 +18,14 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{6AD5900B-25D6-430C-AAAE-30330D612451}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark", "Benchmark\Benchmark.csproj", "{8D92238B-0ABC-4060-8449-22EAD384C9D5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{913C3292-F4D3-4B1A-A5DC-30A22369CFA0} = {913C3292-F4D3-4B1A-A5DC-30A22369CFA0}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{7659DC8B-F5A9-4FF0-B9C0-4AA9A438C29F}"
+	ProjectSection(SolutionItems) = preProject
+		build_benchmark.ps1 = build_benchmark.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

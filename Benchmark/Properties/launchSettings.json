@@ -5,8 +5,7 @@
     },
     "Docker": {
       "commandName": "Docker",
-      //"commandLineArgs": "--cli 'C:\Program Files\dotnet'"
-      "commandLineArgs": "--filter '*TheEasiestBenchmark*' --cli 'C:\\Program Files\\dotnet'"
+      "DockerfileRunArguments": "-v E:\\TestPO\\Benchmark:/app/bin/publish/BenchmarkDotNet.Artifacts --privileged -it benchmark --filter *"
     }
   }
 }
