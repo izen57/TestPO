@@ -1,6 +1,6 @@
 Запускайте проект "Docker" скриптом, а не через Visual Studio (перед запуском надо, конечно, построить проект как раз в VS).
-```shell
-.\build_benchmark.bat
+```powershell
+.\build_benchmark.ps1
 ```
 
 # Лаба 1
