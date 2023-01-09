@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
@@ -13,10 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exceptions", "Exceptions\Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoriesImplementations", "RepositoriesImplementations\RepositoriesImplementations.csproj", "{600B99DA-9A9B-4607-9D0F-D9992C5DC8EF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark", "Benchmark\Benchmark.csproj", "{8D92238B-0ABC-4060-8449-22EAD384C9D5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{913C3292-F4D3-4B1A-A5DC-30A22369CFA0} = {913C3292-F4D3-4B1A-A5DC-30A22369CFA0}
+	EndProjectSection
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{44F996F8-908E-46C4-8A62-C5BA3E4B6A00}"
 	ProjectSection(SolutionItems) = preProject
 		.gitlab-ci.yml = .gitlab-ci.yml
 		build.bat = build.bat
+		build_benchmark.ps1 = build_benchmark.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{3A5D5554-44D6-4C1F-B88C-E3E46B7DD87D}"
@@ -75,6 +81,10 @@ Global
 		{6AD5900B-25D6-430C-AAAE-30330D612451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AD5900B-25D6-430C-AAAE-30330D612451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AD5900B-25D6-430C-AAAE-30330D612451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D92238B-0ABC-4060-8449-22EAD384C9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D92238B-0ABC-4060-8449-22EAD384C9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D92238B-0ABC-4060-8449-22EAD384C9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D92238B-0ABC-4060-8449-22EAD384C9D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

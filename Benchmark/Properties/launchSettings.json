@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Benchmark": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "DockerfileRunArguments": "-v E:\\TestPO\\Benchmark:/app/bin/publish/BenchmarkDotNet.Artifacts --privileged -it benchmark --filter *"
+    }
+  }
+}

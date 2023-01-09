@@ -135,3 +135,4 @@ $RECYCLE.BIN/
 _NCrunch*
 /CLI/Logfile.txt
 /gitlab-runner
+/Benchmark/results
